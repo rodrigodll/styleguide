@@ -50,9 +50,9 @@ class CheckboxGroup extends Component {
   }
 
   render() {
-    const { checkedMap, disabled, name, id, value, label, padded } = this.props
+    const { checkedMap, disabled, name, id, value, label, padded, blockClass } = this.props
     return (
-      <div>
+      <div className={this.blockClass}>
         <Checkbox
           checked={this.isFullyChecked()}
           partial={this.isPartiallyChecked()}
@@ -109,7 +109,9 @@ CheckboxGroup.propTypes = {
   /** (Input spec attribute) */
   value: PropTypes.string.isRequired,
   /** Setting for the padding, set it for false if want the inner checkboxes with no padding in relation to the main checkbox */
-  padded: PropTypes.bool,
+  padded: PropTypes.bool,  
+  /** Class for styling */
+  blockClass: PropTypes.string,
 }
 
 export default CheckboxGroup
